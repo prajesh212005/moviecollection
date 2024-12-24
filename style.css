@@ -1,0 +1,129 @@
+body {
+  font-family: "Abel", sans-serif;
+  background-color: #f9f9f9;
+  padding-top: 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Abel", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* New Button Style */
+.btn-custom {
+  background-color: #69a0a7;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.btn-custom:hover {
+  background-color: #5c7e82;
+}
+
+/* Custom Section Dividers */
+.section-divider {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 2px;
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.section-divider:hover {
+  height: 3px;
+  background-color: #007bff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Container Styles */
+.section {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section h2,
+.section h3 {
+  color: #333;
+}
+
+/* Special Styling for Dropdowns */
+.dropdown-menu {
+  min-width: 150px;
+}
+
+.dropdown-toggle {
+  background-color: #69a0a7;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 12px; /* Reduced padding for a smaller size */
+  font-size: 14px; /* Font size adjustment */
+}
+
+.dropdown-menu a {
+  padding: 8px 16px; /* Reduce padding for smaller items */
+  font-size: 14px; /* Font size adjustment */
+}
+
+.dropdown-menu a:hover {
+  background-color: #69a0a7;
+  color: white;
+}
+
+/* Table styling */
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.movie-table th,
+.movie-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.movie-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.movie-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.movie-table tbody tr:hover {
+  background-color: #e0e0e0;
+}

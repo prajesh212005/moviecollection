@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Movie Collection Manager</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Abhaya+Libre|Abril+Fatface&display=swap">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Dynamic-Table.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movie Collection Manager</h1>
+
+        <!-- Movie Information Section -->
+        <div class="section">
+            <form>
+                <!-- Movie Name -->
+                <div class="form-group">
+                    <label for="movieName">Enter the name of the movie:</label>
+                    <input type="text" class="form-control" id="movieName" placeholder="Enter movie name" required>
+                </div>
+
+                <!-- Genre (Now a dropdown) -->
+                <div class="form-group">
+                    <label for="genreDropdownMovie">Select the genre of the movie:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-custom dropdown-toggle" type="button" id="genreDropdownMovie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Genre
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="genreDropdownMovie" id="genreDropdownMenuMovie">
+                            <a class="dropdown-item" href="#" data-genre="Action">Action</a>
+                            <a class="dropdown-item" href="#" data-genre="Comedy">Comedy</a>
+                            <a class="dropdown-item" href="#" data-genre="Drama">Drama</a>
+                            <a class="dropdown-item" href="#" data-genre="Sci-fi">Sci-fi</a>
+                            <a class="dropdown-item" href="#" data-genre="Suspense">Suspense</a>
+                            <a class="dropdown-item" href="#" data-genre="Thriller">Thriller</a>
+                            <!-- Add more genres as needed -->
+                        </div>
+                    </div>
+                    <input type="hidden" id="genre" required>
+                </div>
+
+                <!-- Rating -->
+                <div class="form-group">
+                    <label for="rating">Enter the rating of the movie:</label>
+                    <input type="number" class="form-control" id="rating" placeholder="Enter rating" min="0" max="10" required>
+                </div>
+
+                <!-- Release Year -->
+                <div class="form-group">
+                    <label for="releaseYear">Enter the release year of the movie:</label>
+                    <input type="text" class="form-control" id="releaseYear" placeholder="Enter release year" required>
+                </div>
+
+                <!-- Add Button -->
+                <button class="btn btn-custom" type="button" id="btn1"><strong>Add</strong></button>
+            </form>
+        </div>
+
+        <!-- Section Divider: Before List of All Movies -->
+        <div class="section-divider"></div>
+
+        <!-- List of Movies Section -->
+        <div class="section" id="List_All_Movies">
+            <h2>List Of All Movies</h2>
+            <div class="table-container">
+                <table class="movie-table">
+                    <thead>
+                        <tr>
+                            <th>Movie Name</th>
+                            <th>Genre</th>
+                            <th>Rating</th>
+                            <th>Release Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movieTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section Divider: Before Genre Selection -->
+        <div class="section-divider"></div>
+
+        <!-- Genre Selection Section -->
+        <div class="section">
+            <h3>Select a Genre</h3>
+            <div class="dropdown">
+                <button class="btn btn-custom dropdown-toggle" type="button" id="genreDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Genre
+                </button>
+                <div class="dropdown-menu" aria-labelledby="genreDropdown" id="genreDropdownMenu">
+                    <a class="dropdown-item" href="#" data-genre="Action">Action</a>
+                    <a class="dropdown-item" href="#" data-genre="Comedy">Comedy</a>
+                    <a class="dropdown-item" href="#" data-genre="Drama">Drama</a>
+                    <a class="dropdown-item" href="#" data-genre="Sci-fi">Sci-fi</a>
+                    <a class="dropdown-item" href="#" data-genre="Suspense">Suspense</a>
+                    <a class="dropdown-item" href="#" data-genre="Thriller">Thriller</a>
+                    <!-- Add more genres as needed -->
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="movie-table">
+                    <thead>
+                        <tr>
+                            <th>Movie Name</th>
+                            <th>Genre</th>
+                            <th>Rating</th>
+                            <th>Release Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="genreTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section Divider: Before Highest Rated Movie -->
+        <div class="section-divider"></div>
+
+        <!-- Highest Rated Movie Section -->
+        <div class="section">
+            <h3>Highest Rated Movie in the collection</h3>
+            <div class="table-container">
+                <table class="movie-table">
+                    <thead>
+                        <tr>
+                            <th>Movie Name</th>
+                            <th>Genre</th>
+                            <th>Rating</th>
+                            <th>Release Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratingTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section Divider: Before Year Selection -->
+        <div class="section-divider"></div>
+
+        <!-- Year Selection Section -->
+        <div class="section">
+            <h3>Select a specific year</h3>
+            <div class="dropdown">
+                <button class="btn btn-custom dropdown-toggle" type="button" id="yearDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    1950
+                </button>
+                <div class="dropdown-menu" aria-labelledby="yearDropdown" id="yearDropdownMenu">
+                    <!-- Years 1950 to 2024 -->
+                    <script>
+                        for (let year = 1950; year <= 2024; year++) {
+                            document.write('<a class="dropdown-item" href="#">' + year + '</a>');
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="movie-table">
+                    <thead>
+                        <tr>
+                            <th>Movie Name</th>
+                            <th>Genre</th>
+                            <th>Rating</th>
+                            <th>Release Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="yearTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Dynamic-Table-dynamic-table.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
